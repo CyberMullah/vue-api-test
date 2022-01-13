@@ -18,7 +18,10 @@ import request from "./../environment/request";
         request().post('/login', {
           'email': "admin@email.com",
           'password': "password"
-        });
+        }).then(response => {
+           localStorage.setItem('access-token', response.data.access_token);
+           this.$router.push('/dashboard');
+        })
       }
     }
   }
