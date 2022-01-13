@@ -1,0 +1,58 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+table {
+  @apply w-full shadow-lg rounded;
+
+  thead {
+    tr {
+      @apply bg-gray-300 text-gray-700 uppercase;
+
+      th {
+        @apply py-3 px-4 font-normal text-sm;
+      }
+
+      & th:first-child {
+        @apply rounded-tl;
+      }
+
+      & th:last-child {
+        @apply rounded-tr;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        @apply p-3 text-sm text-gray-700;
+      }
+
+      &:last-child {
+        @apply border-0;
+        & td:first-child {
+          @apply rounded-bl;
+        }
+
+        & td:last-child {
+          @apply rounded-br;
+        }
+      }
+    }
+  }
+
+  tr {
+    @apply border-b bg-white text-left;
+  }
+
+  tr:nth-child(even) {
+    @apply bg-gray-100;
+  }
+}
+
+.pagination {
+  @apply flex justify-end mt-4 items-center;
+}
